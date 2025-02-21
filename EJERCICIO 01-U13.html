@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir Nodo Hijo</title>
+</head>
+<body>
+
+  <h2>Ejemplo de Añadir Nodo Hijo</h2>
+
+  <!-- Contenedor donde se añadirá el nuevo nodo -->
+  <div id="contenedor">
+    <p>Este es un párrafo inicial.</p>
+  </div>
+
+  <!-- Botón para añadir el nodo hijo -->
+  <button onclick="agregarNodoHijo()">Añadir Nodo Hijo</button>
+
+  <script>
+    // Función para añadir un nodo hijo a un elemento
+    function agregarNodoHijo() {
+      // Obtener el contenedor
+      var contenedor = document.getElementById('contenedor');
+      
+      // Crear un nuevo nodo de tipo <p>
+      var nuevoNodo = document.createElement('p');
+      
+      // Asignar texto al nuevo nodo
+      nuevoNodo.textContent = 'Este es un nuevo párrafo añadido como hijo.';
+
+      // Añadir el nuevo nodo como hijo del contenedor
+      contenedor.appendChild(nuevoNodo);
+    }
+  </script>
+
+</body>
+</html>

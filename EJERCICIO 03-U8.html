@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Mascota</title>
+</head>
+<body>
+    <h1>Detalles de la Mascota</h1>
+    <div id="mascotaDetails"></div>
+
+    <script>
+        // Crear el objeto mascota
+        const mascota = {
+            nombre: "Rex",
+            edad: 5,
+            tipoAnimal: "Perro"
+        };
+
+        // Mostrar el objeto completo en el navegador
+        const detailsDiv = document.getElementById('mascotaDetails');
+        detailsDiv.innerHTML = `
+            <p><strong>Nombre:</strong> ${mascota.nombre}</p>
+            <p><strong>Edad:</strong> ${mascota.edad}</p>
+            <p><strong>Tipo de Animal:</strong> ${mascota.tipoAnimal}</p>
+            <p><strong>Objeto Completo:</strong> ${JSON.stringify(mascota)}</p>
+        `;
+    </script>
+</body>
+</html>

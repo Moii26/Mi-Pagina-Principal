@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Opinión sobre Maquetación Artesanal</title>
+</head>
+<body>
+    <h1>Formulario de Opinión sobre Maquetación Artesanal</h1>
+    <form action="/enviar-opinion" method="POST">
+        <div>
+            <label for="interes">¿Cuál es su interés en la maquetación artesanal?</label><br>
+            <textarea id="interes" name="interes" rows="4" cols="50" required></textarea>
+        </div>
+        <div>
+            <label for="opinion">¿Cuál es su opinión sobre la maquetación artesanal?</label><br>
+            <textarea id="opinion" name="opinion" rows="4" cols="50" required></textarea>
+        </div>
+        <div>
+            <label for="experiencia">¿Cuál es su experiencia con la maquetación artesanal?</label><br>
+            <textarea id="experiencia" name="experiencia" rows="4" cols="50" required></textarea>
+        </div>
+        <div>
+            <button type="submit">Enviar Respuestas</button>
+        </div>
+    </form>
+</body>
+</html>

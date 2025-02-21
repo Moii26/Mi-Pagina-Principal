@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Palabra en Frase</title>
+</head>
+<body>
+    <h2>Contador de Palabras</h2>
+
+    <label for="frase">Ingrese la frase:</label>
+    <textarea id="frase" rows="4" cols="50">Este es un ejemplo de texto con ejemplo de palabra repetida</textarea><br><br>
+
+    <label for="palabra">Ingrese la palabra a buscar:</label>
+    <input type="text" id="palabra" value="ejemplo"><br><br>
+
+    <button onclick="contarPalabra()">Contar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contarPalabra() {
+            var frase = document.getElementById("frase").value.toLowerCase();
+            var palabra = document.getElementById("palabra").value.toLowerCase();
+
+            // Dividir la frase en palabras y contar las veces que aparece la palabra
+            var palabras = frase.split(/\s+/); // Separar por espacios
+            var contador = palabras.filter(function(palabraItem) {
+                return palabraItem === palabra;
+            }).length;
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = 
+                'La palabra "' + palabra + '" aparece ' + contador + ' veces en la frase.';
+        }
+    </script>
+</body>
+</html>

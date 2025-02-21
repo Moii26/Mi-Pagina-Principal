@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animación de Movimiento</title>
+  <style>
+    /* Estilo para el objeto que se moverá */
+    #objeto {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      position: absolute;  /* Usamos posición absoluta para moverlo en la pantalla */
+      top: 100px;          /* Posición inicial */
+      left: 100px;         /* Posición inicial */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Animar Movimiento de un Objeto</h2>
+
+  <!-- Botones para mover el objeto -->
+  <button onclick="moverArriba()">Arriba</button>
+  <button onclick="moverAbajo()">Abajo</button>
+  <button onclick="moverIzquierda()">Izquierda</button>
+  <button onclick="moverDerecha()">Derecha</button>
+
+  <div id="objeto"></div> <!-- El objeto que se moverá -->
+
+  <script>
+    // Obtener el objeto de la página
+    var objeto = document.getElementById('objeto');
+
+    // Función para mover el objeto hacia arriba
+    function moverArriba() {
+      var top = parseInt(window.getComputedStyle(objeto).top);
+      objeto.style.top = (top - 10) + 'px'; // Mueve el objeto 10px hacia arriba
+    }
+
+    // Función para mover el objeto hacia abajo
+    function moverAbajo() {
+      var top = parseInt(window.getComputedStyle(objeto).top);
+      objeto.style.top = (top + 10) + 'px'; // Mueve el objeto 10px hacia abajo
+    }
+
+    // Función para mover el objeto hacia la izquierda
+    function moverIzquierda() {
+      var left = parseInt(window.getComputedStyle(objeto).left);
+      objeto.style.left = (left - 10) + 'px'; // Mueve el objeto 10px hacia la izquierda
+    }
+
+    // Función para mover el objeto hacia la derecha
+    function moverDerecha() {
+      var left = parseInt(window.getComputedStyle(objeto).left);
+      objeto.style.left = (left + 10) + 'px'; // Mueve el objeto 10px hacia la derecha
+    }
+  </script>
+
+</body>
+</html>

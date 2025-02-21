@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Contraseña</title>
+</head>
+<body>
+    <h2>Validar Contraseña</h2>
+
+    <label for="contrasena">Ingrese la contraseña:</label>
+    <input type="password" id="contrasena"><br><br>
+
+    <button onclick="validarContrasena()">Validar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarContrasena() {
+            var contrasena = document.getElementById("contrasena").value;
+
+            // Expresión regular que verifica al menos una mayúscula, una minúscula y un número
+            var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+
+            // Verificar si la contraseña cumple con el patrón
+            if (regex.test(contrasena)) {
+                document.getElementById("resultado").innerHTML = "La contraseña es válida.";
+                document.getElementById("resultado").style.color = "green";
+            } else {
+                document.getElementById("resultado").innerHTML = "La contraseña no es válida. Debe contener al menos una letra mayúscula, una letra minúscula y un número.";
+                document.getElementById("resultado").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

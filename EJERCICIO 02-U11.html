@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Contraseña</title>
+</head>
+<body>
+    <h2>Cambiar Contraseña</h2>
+
+    <form id="formulario" onsubmit="return validarContrasena()">
+        <label for="contrasena">Nueva contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena"><br><br>
+
+        <button type="submit">Cambiar Contraseña</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarContrasena() {
+            var contrasena = document.getElementById("contrasena").value;
+
+            // Validar que la contraseña tenga al menos 8 caracteres
+            if (contrasena.length < 8) {
+                document.getElementById("resultado").innerHTML = "La contraseña debe tener al menos 8 caracteres.";
+                document.getElementById("resultado").style.color = "red";
+                return false; // Evita el envío del formulario
+            }
+
+            document.getElementById("resultado").innerHTML = "Contraseña cambiada correctamente.";
+            document.getElementById("resultado").style.color = "green";
+            return true; // Permite el envío del formulario
+        }
+    </script>
+</body>
+</html>

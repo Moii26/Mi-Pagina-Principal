@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Datos</title>
+</head>
+<body>
+    <h1>Validación de Datos</h1>
+    <p id="fecha"></p>
+    <p id="resultadoEmail"></p>
+    <p id="resultadoTelefono"></p>
+
+    <script>
+        const libro = {
+            titulo: "Cien años de soledad",
+            autor: "Gabriel García Márquez",
+            fechaPublicacion: "1967"
+        };
+
+        console.log(libro);
+
+        document.getElementById("fecha").textContent = `Fecha actual: ${new Date().toLocaleDateString()}`;
+
+        function validarEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        const email = prompt("Ingrese un correo electrónico:");
+        const esValidoEmail = validarEmail(email);
+        
+        console.log(`El correo ${email} es ${esValidoEmail ? "válido" : "inválido"}`);
+        document.getElementById("resultadoEmail").textContent = `El correo ${email} es ${esValidoEmail ? "válido" : "inválido"}`;
+
+        function validarTelefono(telefono) {
+            const regex = /^\d{10}$/;
+            return regex.test(telefono);
+        }
+
+        const telefono = prompt("Ingrese un número de teléfono de 10 dígitos:");
+        const esValidoTelefono = validarTelefono(telefono);
+        
+        console.log(`El número ${telefono} es ${esValidoTelefono ? "válido" : "inválido"}`);
+        document.getElementById("resultadoTelefono").textContent = `El número ${telefono} es ${esValidoTelefono ? "válido" : "inválido"}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Campo Vacío</title>
+</head>
+<body>
+    <h2>Formulario de Validación</h2>
+
+    <form id="formulario" onsubmit="return validarCampo()">
+        <label for="campo">Ingrese un dato:</label>
+        <input type="text" id="campo" name="campo"><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarCampo() {
+            var campo = document.getElementById("campo").value;
+
+            // Validar si el campo está vacío
+            if (campo.trim() === "") {
+                document.getElementById("resultado").innerHTML = "El campo no puede estar vacío.";
+                document.getElementById("resultado").style.color = "red";
+                return false; // Evita el envío del formulario
+            }
+
+            document.getElementById("resultado").innerHTML = "Formulario enviado correctamente.";
+            document.getElementById("resultado").style.color = "green";
+            return true; // Permite el envío del formulario
+        }
+    </script>
+</body>
+</html>

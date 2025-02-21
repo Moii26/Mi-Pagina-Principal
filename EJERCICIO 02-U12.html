@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animar Cambio de Tamaño</title>
+  <style>
+    /* Estilo para el objeto que cambiará de tamaño */
+    #objeto {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      transition: width 0.3s, height 0.3s; /* Añadir una transición suave */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Animar Cambio de Tamaño de un Objeto</h2>
+
+  <!-- Botones para cambiar el tamaño -->
+  <button onclick="aumentarTamaño()">Aumentar Tamaño</button>
+  <button onclick="disminuirTamaño()">Disminuir Tamaño</button>
+
+  <div id="objeto"></div> <!-- El objeto que cambiará de tamaño -->
+
+  <script>
+    // Obtener el objeto de la página
+    var objeto = document.getElementById('objeto');
+
+    // Función para aumentar el tamaño del objeto
+    function aumentarTamaño() {
+      objeto.style.width = '200px';  // Aumenta el ancho a 200px
+      objeto.style.height = '200px'; // Aumenta la altura a 200px
+    }
+
+    // Función para disminuir el tamaño del objeto
+    function disminuirTamaño() {
+      objeto.style.width = '100px';  // Disminuye el ancho a 100px
+      objeto.style.height = '100px'; // Disminuye la altura a 100px
+    }
+  </script>
+
+</body>
+</html>

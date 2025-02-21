@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenar Palabras</title>
+</head>
+<body>
+    <h1>Concatenación de Palabras</h1>
+    <div id="resultado"></div>
+
+    <script>
+        // Crear las palabras
+        const palabra1 = "hola";
+        const palabra2 = "mundo";
+
+        // Concatenar las palabras con un espacio en blanco
+        const mensaje = palabra1 + " " + palabra2;
+
+        // Mostrar el mensaje en el navegador
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = `<p><strong>Resultado:</strong> ${mensaje}</p>`;
+    </script>
+</body>
+</html>

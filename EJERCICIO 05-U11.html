@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación Checkbox</title>
+</head>
+<body>
+    <h2>Selecciona al menos una opción</h2>
+
+    <form id="formulario" onsubmit="return validarCheckbox()">
+        <label for="opcion1">Opción 1</label>
+        <input type="checkbox" id="opcion1" name="opciones"><br>
+
+        <label for="opcion2">Opción 2</label>
+        <input type="checkbox" id="opcion2" name="opciones"><br>
+
+        <label for="opcion3">Opción 3</label>
+        <input type="checkbox" id="opcion3" name="opciones"><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarCheckbox() {
+            var checkboxes = document.getElementsByName("opciones");
+            var seleccionada = false;
+
+            // Recorremos todos los checkboxes y verificamos si al menos uno está seleccionado
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    seleccionada = true;
+                    break; // Si se encuentra uno seleccionado, detenemos el ciclo
+                }
+            }
+
+            // Mostrar mensaje dependiendo de si se seleccionó alguna opción
+            if (!seleccionada) {
+                document.getElementById("resultado").innerHTML = "Debes seleccionar al menos una opción.";
+                document.getElementById("resultado").style.color = "red";
+                return false; // Evita el envío del formulario
+            }
+
+            document.getElementById("resultado").innerHTML = "Formulario enviado correctamente.";
+            document.getElementById("resultado").style.color = "green";
+            return true; // Permite el envío del formulario
+        }
+    </script>
+</body>
+</html>

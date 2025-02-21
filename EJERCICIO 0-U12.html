@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animación de Rebote</title>
+  <style>
+    /* Estilo para el objeto que rebotará */
+    #objeto {
+      width: 50px;
+      height: 50px;
+      background-color: #f39c12;
+      border-radius: 50%; /* Hacerlo redondo como una pelota */
+      position: absolute;
+      top: 100px;
+      left: 0; /* Comienza en el lado izquierdo */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Animación de Rebote</h2>
+
+  <!-- El objeto que rebotará -->
+  <div id="objeto"></div>
+
+  <script>
+    // Obtener el objeto de la página
+    var objeto = document.getElementById('objeto');
+
+    // Inicializar variables
+    var posicionX = 0; // Posición inicial en el eje X
+    var velocidad = 3;  // Velocidad de movimiento
+    var direccion = 1;  // Dirección: 1 para mover a la derecha, -1 para mover a la izquierda
+    var limiteDerecho = window.innerWidth - 50;  // Límite derecho (tamaño de la ventana menos el tamaño del objeto)
+
+    // Función para mover el objeto
+    function mover() {
+      // Actualizar la posición del objeto
+      posicionX += velocidad * direccion;
+      objeto.style.left = posicionX + 'px';
+
+      // Verificar si el objeto llega al borde derecho o izquierdo
+      if (posicionX >= limiteDerecho || posicionX <= 0) {
+        direccion *= -1;  // Cambiar la dirección (rebote)
+      }
+
+      // Llamar a la función de nuevo para continuar la animación
+      requestAnimationFrame(mover);
+    }
+
+    // Iniciar la animación
+    mover();
+  </script>
+
+</body>
+</html>

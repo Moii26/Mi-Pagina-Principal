@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Email</title>
+</head>
+<body>
+    <h1>Validación de Correo Electrónico</h1>
+    <p id="fecha"></p>
+    <p id="resultadoEmail"></p>
+
+    <script>
+        const libro = {
+            titulo: "Cien años de soledad",
+            autor: "Gabriel García Márquez",
+            fechaPublicacion: "1967"
+        };
+
+        console.log(libro);
+
+        document.getElementById("fecha").textContent = `Fecha actual: ${new Date().toLocaleDateString()}`;
+
+        function validarEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        const email = prompt("Ingrese un correo electrónico:");
+        const esValido = validarEmail(email);
+        
+        console.log(`El correo ${email} es ${esValido ? "válido" : "inválido"}`);
+        document.getElementById("resultadoEmail").textContent = `El correo ${email} es ${esValido ? "válido" : "inválido"}`;
+    </script>
+</body>
+</html>

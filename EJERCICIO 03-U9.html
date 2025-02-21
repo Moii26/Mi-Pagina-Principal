@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplicar Arreglo por 2</title>
+</head>
+<body>
+
+  <h2>Nuevo Arreglo Multiplicado por 2</h2>
+  <p id="resultado"></p>
+
+  <script>
+    // Arreglo original de números
+    var numeros = [1, 2, 3, 4, 5];
+
+    // Crear un nuevo arreglo donde cada número es multiplicado por 2
+    var numerosMultiplicados = numeros.map(function(numero) {
+      return numero * 2;
+    });
+
+    // Mostrar el nuevo arreglo en el navegador
+    document.getElementById('resultado').textContent = numerosMultiplicados.join(', ');
+  </script>
+
+</body>
+</html>

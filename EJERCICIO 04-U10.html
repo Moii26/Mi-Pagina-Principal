@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazo de Caracteres</title>
+</head>
+<body>
+    <h2>Reemplazar Caracteres en Frase</h2>
+
+    <label for="frase">Ingrese la frase:</label>
+    <textarea id="frase" rows="4" cols="50">Lorem ipsum dolor sit amet, consectetur adipiscing elit</textarea><br><br>
+
+    <label for="buscar">Texto a buscar:</label>
+    <input type="text" id="buscar" value="ipsum"><br><br>
+
+    <label for="reemplazo">Texto de reemplazo:</label>
+    <input type="text" id="reemplazo" value="dolor"><br><br>
+
+    <button onclick="reemplazarTexto()">Reemplazar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function reemplazarTexto() {
+            var frase = document.getElementById("frase").value;
+            var buscar = document.getElementById("buscar").value;
+            var reemplazo = document.getElementById("reemplazo").value;
+
+            // Reemplazar todas las ocurrencias del texto buscado por el reemplazo
+            var resultado = frase.replace(new RegExp(buscar, 'g'), reemplazo);
+
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = 
+                'Frase original: ' + frase + '<br><br>' + 
+                'Frase modificada: ' + resultado;
+        }
+    </script>
+</body>
+</html>

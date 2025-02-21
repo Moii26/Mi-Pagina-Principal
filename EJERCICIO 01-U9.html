@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Números del 1 al 10</title>
+</head>
+<body>
+
+  <h2>Números del 1 al 10</h2>
+  <ul id="numeros"></ul>
+
+  <script>
+    // Crear un arreglo con los números del 1 al 10
+    var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    // Obtener el elemento donde se mostrarán los números
+    var lista = document.getElementById('numeros');
+
+    // Recorrer el arreglo y mostrar cada número en un <li>
+    for (var i = 0; i < numeros.length; i++) {
+      var li = document.createElement('li');  // Crear un nuevo elemento <li>
+      li.textContent = numeros[i];            // Establecer el texto del <li>
+      lista.appendChild(li);                  // Agregar el <li> a la lista
+    }
+  </script>
+
+</body>
+</html>

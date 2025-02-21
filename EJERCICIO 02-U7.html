@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar Contenido por "¡Hola!"</title>
+</head>
+<body>
+  <p id="mensaje">Este es un mensaje original.</p>
+  <button onclick="cambiarContenido()">Cambiar Contenido</button>
+
+  <script>
+    function cambiarContenido() {
+      // Obtener el elemento por su ID
+      var elemento = document.getElementById('mensaje');
+      
+      // Cambiar el contenido del elemento
+      elemento.textContent = '¡Hola!';
+    }
+  </script>
+</body>
+</html>

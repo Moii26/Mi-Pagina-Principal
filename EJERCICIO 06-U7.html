@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Número Aleatorio de la Lotería</title>
+</head>
+<body>
+
+  <h2>Generador de Número Aleatorio (1-100)</h2>
+
+  <button onclick="generarNumero()">Generar Número</button>
+
+  <h3>Número Aleatorio: <span id="numero"></span></h3>
+
+  <script>
+    function generarNumero() {
+      // Generar un número aleatorio entre 1 y 100
+      var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+      
+      // Mostrar el número en la página
+      document.getElementById('numero').textContent = numeroAleatorio;
+    }
+  </script>
+
+</body>
+</html>

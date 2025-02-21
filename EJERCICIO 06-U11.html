@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Contraseña</title>
+</head>
+<body>
+    <h2>Formulario de Cambio de Contraseña</h2>
+
+    <form id="formulario" onsubmit="return validarContraseñas()">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena"><br><br>
+
+        <label for="contrasenaConfirmar">Confirmar Contraseña:</label>
+        <input type="password" id="contrasenaConfirmar" name="contrasenaConfirmar"><br><br>
+
+        <button type="submit">Cambiar Contraseña</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarContraseñas() {
+            var contrasena = document.getElementById("contrasena").value;
+            var contrasenaConfirmar = document.getElementById("contrasenaConfirmar").value;
+
+            // Verificar si las contraseñas son iguales
+            if (contrasena !== contrasenaConfirmar) {
+                document.getElementById("resultado").innerHTML = "Las contraseñas no coinciden. Por favor, intente de nuevo.";
+                document.getElementById("resultado").style.color = "red";
+                return false; // Evita el envío del formulario
+            }
+
+            document.getElementById("resultado").innerHTML = "Las contraseñas coinciden. Contraseña cambiada correctamente.";
+            document.getElementById("resultado").style.color = "green";
+            return true; // Permite el envío del formulario
+        }
+    </script>
+</body>
+</html>

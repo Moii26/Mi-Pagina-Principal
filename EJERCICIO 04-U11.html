@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Edad</title>
+</head>
+<body>
+    <h2>Formulario de Validación de Edad</h2>
+
+    <form id="formulario" onsubmit="return validarEdad()">
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento"><br><br>
+
+        <button type="submit">Verificar Edad</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarEdad() {
+            var fechaNacimiento = document.getElementById("fechaNacimiento").value;
+            var hoy = new Date();
+            var fechaNacimientoDate = new Date(fechaNacimiento);
+
+            // Calcular la diferencia de años
+            var edad = hoy.getFullYear() - fechaNacimientoDate.getFullYear();
+            var mes = hoy.getMonth() - fechaNacimientoDate.getMonth();
+
+            // Verificar si el usuario tiene al menos 18 años
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimientoDate.getDate())) {
+                edad--;
+            }
+
+            // Validar si la edad es mayor o igual a 18
+            if (edad < 18) {
+                document.getElementById("resultado").innerHTML = "Debes ser mayor de 18 años para continuar.";
+                document.getElementById("resultado").style.color = "red";
+                return false; // Evita el envío del formulario
+            }
+
+            document.getElementById("resultado").innerHTML = "Eres mayor de edad.";
+            document.getElementById("resultado").style.color = "green";
+            return true; // Permite el envío del formulario
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Nombre y Apellidos</title>
+</head>
+<body>
+    <h1>Nombre y Apellidos del Usuario</h1>
+    <div id="nombreCompleto"></div>
+
+    <script>
+        // Crear las variables para nombre y apellidos
+        const nombre = "Juan";
+        const apellidos = "Pérez López";
+
+        // Crear la cadena de caracteres que combina nombre y apellidos
+        const nombreCompleto = `${nombre} ${apellidos}`;
+
+        // Mostrar el nombre completo en el navegador
+        const nombreDiv = document.getElementById('nombreCompleto');
+        nombreDiv.innerHTML = `<p><strong>Nombre Completo:</strong> ${nombreCompleto}</p>`;
+    </script>
+</body>
+</html>

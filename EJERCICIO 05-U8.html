@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Libro</title>
+</head>
+<body>
+    <h1>Detalles del Libro</h1>
+    <div id="libroDetails"></div>
+
+    <script>
+        // Crear el objeto libro
+        const libro = {
+            titulo: "Cien años de soledad",
+            autor: "Gabriel García Márquez",
+            fechaPublicacion: "1967"
+        };
+
+        // Mostrar el objeto completo en el navegador
+        const detailsDiv = document.getElementById('libroDetails');
+        detailsDiv.innerHTML = `
+            <p><st

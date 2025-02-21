@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+</head>
+<body>
+    <h2>Formulario de Contacto</h2>
+
+    <form id="formularioContacto" onsubmit="return validarEmail()">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p id="resultadoEmail"></p>
+
+    <script>
+        function validarEmail() {
+            var email = document.getElementById("email").value;
+
+            // Expresión regular para validar el formato del correo electrónico
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            // Verificar si el correo cumple con el formato
+            if (!regex.test(email)) {
+                document.getElementById("resultadoEmail").innerHTML = "Por favor, ingrese un correo electrónico válido.";
+                document.getElementById("resultadoEmail").style.color = "red";
+                return false; // Evita el envío del formulario
+            }
+
+            document.getElementById("resultadoEmail").innerHTML = "Correo electrónico válido.";
+            document.getElementById("resultadoEmail").style.color = "green";
+            return true; // Permite el envío del formulario
+        }
+    </script>
+</body>
+</html>

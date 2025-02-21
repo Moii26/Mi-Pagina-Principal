@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordenar Nombres Alfabéticamente</title>
+</head>
+<body>
+
+  <h2>Nombres Ordenados Alfabéticamente</h2>
+  <p id="resultado"></p>
+
+  <script>
+    // Arreglo de nombres
+    var nombre = ['Ana', 'Juan', 'María', 'Pedro', 'Luis'];
+
+    // Ordenar alfabéticamente el arreglo
+    var nombresOrdenados = nombre.sort();
+
+    // Mostrar los nombres ordenados en el navegador
+    document.getElementById('resultado').textContent = 'Los nombres ordenados son: ' + nombresOrdenados.join(', ');
+  </script>
+
+</body>
+</html>

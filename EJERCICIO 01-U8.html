@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Persona</title>
+</head>
+<body>
+    <h1>Detalles de la Persona</h1>
+    <div id="personaDetails"></div>
+
+    <script>
+        // Crear el objeto persona
+        const persona = {
+            nombre: "Juan Pérez",
+            edad: 30,
+            correoElectronico: "juan.perez@email.com"
+        };
+
+        // Mostrar el objeto completo en el navegador
+        const detailsDiv = document.getElementById('personaDetails');
+        detailsDiv.innerHTML = `
+            <p><strong>Nombre:</strong> ${persona.nombre}</p>
+            <p><strong>Edad:</strong> ${persona.edad}</p>
+            <p><strong>Correo Electrónico:</strong> ${persona.correoElectronico}</p>
+            <p><strong>Objeto Completo:</strong> ${JSON.stringify(persona)}</p>
+        `;
+    </script>
+</body>
+</html>

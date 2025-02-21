@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Tercer Elemento del Arreglo</title>
+</head>
+<body>
+
+  <h2>El tercer color en el arreglo es:</h2>
+  <p id="color"></p>
+
+  <script>
+    // Crear el arreglo de colores
+    var colores = ['rojo', 'azul', 'verde', 'amarillo', 'naranja'];
+
+    // Obtener el tercer elemento del arreglo (índice 2)
+    var tercerColor = colores[2];
+
+    // Mostrar el tercer color en el elemento <p> con el id 'color'
+    document.getElementById('color').textContent = tercerColor;
+  </script>
+
+</body>
+</html>

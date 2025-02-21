@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraer Números de una Cadena</title>
+</head>
+<body>
+    <h2>Extraer Números de una Cadena</h2>
+
+    <label for="cadena">Ingrese la cadena de caracteres:</label>
+    <textarea id="cadena" rows="4" cols="50">Ejemplo de texto 123 con números 456 y más 7890</textarea><br><br>
+
+    <button onclick="extraerNumeros()">Extraer Números</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function extraerNumeros() {
+            var cadena = document.getElementById("cadena").value;
+            
+            // Expresión regular para extraer todos los números
+            var regex = /\d+/g;
+            
+            // Ejecutar la expresión regular para encontrar todos los números
+            var numeros = cadena.match(regex);
+
+            // Mostrar el resultado
+            if (numeros) {
+                document.getElementById("resultado").innerHTML = 
+                    'Números encontrados: ' + numeros.join(', ');
+            } else {
+                document.getElementById("resultado").innerHTML = 
+                    'No se encontraron números en la cadena.';
+            }
+        }
+    </script>
+</body>
+</html>
